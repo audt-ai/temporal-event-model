@@ -3,9 +3,6 @@
 A primitive for tracking how things change over time.
 
 ---
-
-## What this is
-
 This repository defines a temporal modeling primitive. It provides structured ways to represent:
 
 - **Events**: discrete changes that happened at specific times
@@ -13,10 +10,7 @@ This repository defines a temporal modeling primitive. It provides structured wa
 - **Diffs**: what changed between two points in time
 - **Timelines**: ordered sequences of events
 
-The model treats time as first-class, not as metadata. It's a structured alternative to implicit database history or scattered audit logs.
-
-## What this isn't
-
+It's a structured alternative to implicit database history or scattered audit logs.
 This is not a product, not a workflow engine, not a decision system.
 
 It does not:
@@ -30,7 +24,7 @@ It does not:
 
 The model answers "what changed, and when?" It does not answer "why it matters" or "what should be done about it."
 
-## When to use this
+## Use case
 
 Use this model when you need explicit change tracking and want to separate representation from interpretation.
 
@@ -96,5 +90,5 @@ Apache 2.0
 
 ---
 
-Built by [Audt](https://github.com/Audt)
+Built by [audt](https://github.com/audt-ai)
 
