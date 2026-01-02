@@ -24,7 +24,7 @@ It does not:
 
 The model answers "what changed, and when?" It does not answer "why it matters" or "what should be done about it."
 
-## Use case
+# Use case
 
 Use this model when you need explicit change tracking and want to separate representation from interpretation.
 
@@ -40,7 +40,7 @@ Not a good fit:
 - You need a complete audit/compliance solution with retention policies and tamper-proofing
 - You're looking for a turnkey product
 
-## Quick example
+# Quick example
 
 An entity is created, updated, then deleted:
 
@@ -67,7 +67,7 @@ Diff between them:
 
 That's it. Events in, snapshots and diffs out. No interpretation.
 
-## Repository contents
+# Repository contents
 
 ```
 docs/               Architecture and concepts
@@ -76,15 +76,15 @@ reference/python/   Minimal reference implementation
 examples/           Complete worked examples
 ```
 
-## Versioning
+# Versioning
 
 Schemas are versioned semantically. We're conservative about changes. See [docs/architecture.md](docs/architecture.md) for details.
 
-## Status
+Status
 
 v0.1 — Initial release. The model is stable enough to build on, but we expect to learn from real usage.
 
-## License
+ # License
 
 Apache 2.0
 
