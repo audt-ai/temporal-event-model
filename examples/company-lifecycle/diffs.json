@@ -1,0 +1,123 @@
+{
+  "description": "Diffs between consecutive snapshots of company-123",
+  "diffs": [
+    {
+      "before": {
+        "as_of": "2024-02-01T00:00:00Z"
+      },
+      "after": {
+        "as_of": "2024-04-01T00:00:00Z"
+      },
+      "changes": [
+        {
+          "field": "employee_count",
+          "before": null,
+          "after": 10
+        },
+        {
+          "field": "relationships",
+          "before": null,
+          "after": [
+            {
+              "type": "employs",
+              "target": "person-456",
+              "role": "engineer",
+              "start_date": "2024-03-20"
+            }
+          ]
+        },
+        {
+          "field": "status",
+          "before": "active",
+          "after": "expanding"
+        }
+      ]
+    },
+    {
+      "before": {
+        "as_of": "2024-04-01T00:00:00Z"
+      },
+      "after": {
+        "as_of": "2024-07-01T00:00:00Z"
+      },
+      "changes": [
+        {
+          "field": "employee_count",
+          "before": 10,
+          "after": 25
+        },
+        {
+          "field": "status",
+          "before": "expanding",
+          "after": "stable"
+        }
+      ]
+    },
+    {
+      "before": {
+        "as_of": "2024-07-01T00:00:00Z"
+      },
+      "after": {
+        "as_of": "2025-01-01T00:00:00Z"
+      },
+      "changes": [
+        {
+          "field": "_deleted_state",
+          "before": null,
+          "after": {
+            "name": "Acme Corp",
+            "status": "stable",
+            "founded": "2024-01-01",
+            "employee_count": 25,
+            "relationships": [
+              {
+                "type": "employs",
+                "target": "person-456",
+                "role": "engineer",
+                "start_date": "2024-03-20"
+              }
+            ]
+          }
+        },
+        {
+          "field": "deleted",
+          "before": false,
+          "after": true
+        },
+        {
+          "field": "employee_count",
+          "before": 25,
+          "after": null
+        },
+        {
+          "field": "founded",
+          "before": "2024-01-01",
+          "after": null
+        },
+        {
+          "field": "name",
+          "before": "Acme Corp",
+          "after": null
+        },
+        {
+          "field": "relationships",
+          "before": [
+            {
+              "type": "employs",
+              "target": "person-456",
+              "role": "engineer",
+              "start_date": "2024-03-20"
+            }
+          ],
+          "after": null
+        },
+        {
+          "field": "status",
+          "before": "stable",
+          "after": null
+        }
+      ]
+    }
+  ]
+}
+

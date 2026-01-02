@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Audt/temporal-event-model/spec/v0.1/event.schema.json",
+  "title": "Event",
+  "description": "A discrete record of a change that occurred at a specific point in time",
+  "type": "object",
+  "required": ["id", "entity_id", "event_type", "timestamp", "payload"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for this event"
+    },
+    "entity_id": {
+      "type": "string",
+      "description": "Identifier for the entity or relationship that changed"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": ["created", "updated", "deleted", "relationship_added", "relationship_removed"],
+      "description": "The type of change"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp indicating when the change occurred"
+    },
+    "payload": {
+      "type": "object",
+      "description": "The change data. Structure varies by event_type."
+    },
+    "evidence": {
+      "type": "array",
+      "description": "References to supporting material",
+      "items": {
+        "type": "object",
+        "required": ["type", "reference"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of evidence (e.g., document, log_entry, api_response)"
+          },
+          "reference": {
+            "type": "string",
+            "description": "URI or identifier pointing to the evidence"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the evidence was created or captured"
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "string",
+      "description": "Identifier for the system or process that generated this event"
+    },
+    "correlation_id": {
+      "type": "string",
+      "description": "Identifier for grouping related events"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional key-value pairs for extensibility",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
+

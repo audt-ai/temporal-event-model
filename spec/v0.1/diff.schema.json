@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Audt/temporal-event-model/spec/v0.1/diff.schema.json",
+  "title": "Diff",
+  "description": "Structured differences between two snapshots",
+  "type": "object",
+  "required": ["before", "after", "changes"],
+  "properties": {
+    "before": {
+      "type": "object",
+      "description": "Reference to the earlier snapshot",
+      "required": ["as_of"],
+      "properties": {
+        "as_of": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the before snapshot"
+        },
+        "snapshot_ref": {
+          "type": "string",
+          "description": "Optional identifier for the snapshot"
+        }
+      }
+    },
+    "after": {
+      "type": "object",
+      "description": "Reference to the later snapshot",
+      "required": ["as_of"],
+      "properties": {
+        "as_of": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the after snapshot"
+        },
+        "snapshot_ref": {
+          "type": "string",
+          "description": "Optional identifier for the snapshot"
+        }
+      }
+    },
+    "changes": {
+      "type": "array",
+      "description": "List of field-level changes",
+      "items": {
+        "type": "object",
+        "required": ["field"],
+        "properties": {
+          "field": {
+            "type": "string",
+            "description": "Path to the changed field (dot notation for nested fields)"
+          },
+          "before": {
+            "description": "Value before the change. Null if field was added."
+          },
+          "after": {
+            "description": "Value after the change. Null if field was removed."
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

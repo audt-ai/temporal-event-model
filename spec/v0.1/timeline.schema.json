@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Audt/temporal-event-model/spec/v0.1/timeline.schema.json",
+  "title": "Timeline",
+  "description": "Ordered sequence of events for an entity",
+  "type": "object",
+  "required": ["entity_id", "events"],
+  "properties": {
+    "entity_id": {
+      "type": "string",
+      "description": "Identifier for the entity this timeline tracks"
+    },
+    "events": {
+      "type": "array",
+      "description": "Event IDs in chronological order",
+      "items": {
+        "type": "string"
+      }
+    },
+    "first_event_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of the earliest event"
+    },
+    "last_event_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of the most recent event"
+    },
+    "event_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of events in the timeline"
+    }
+  },
+  "additionalProperties": false
+}
+

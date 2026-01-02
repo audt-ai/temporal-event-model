@@ -1,0 +1,67 @@
+[
+  {
+    "id": "evt-001",
+    "entity_id": "company-123",
+    "event_type": "created",
+    "timestamp": "2024-01-01T00:00:00Z",
+    "payload": {
+      "name": "Acme Corp",
+      "status": "active",
+      "founded": "2024-01-01"
+    },
+    "source": "manual-entry"
+  },
+  {
+    "id": "evt-002",
+    "entity_id": "company-123",
+    "event_type": "updated",
+    "timestamp": "2024-03-15T10:30:00Z",
+    "payload": {
+      "status": "expanding",
+      "employee_count": 10
+    },
+    "source": "hr-system"
+  },
+  {
+    "id": "evt-003",
+    "entity_id": "company-123",
+    "event_type": "relationship_added",
+    "timestamp": "2024-03-20T14:00:00Z",
+    "payload": {
+      "relationship_type": "employs",
+      "target_entity": "person-456",
+      "properties": {
+        "role": "engineer",
+        "start_date": "2024-03-20"
+      }
+    },
+    "source": "hr-system"
+  },
+  {
+    "id": "evt-004",
+    "entity_id": "company-123",
+    "event_type": "updated",
+    "timestamp": "2024-06-01T09:00:00Z",
+    "payload": {
+      "status": "stable",
+      "employee_count": 25
+    },
+    "source": "hr-system"
+  },
+  {
+    "id": "evt-005",
+    "entity_id": "company-123",
+    "event_type": "deleted",
+    "timestamp": "2024-12-31T23:59:59Z",
+    "payload": {},
+    "source": "legal-filing",
+    "evidence": [
+      {
+        "type": "document",
+        "reference": "filing://state/dissolution/2024-12345",
+        "timestamp": "2024-12-31T00:00:00Z"
+      }
+    ]
+  }
+]
+

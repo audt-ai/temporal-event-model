@@ -1,0 +1,79 @@
+{
+  "description": "Snapshots of company-123 at different points in time",
+  "snapshots": [
+    {
+      "entity_id": "company-123",
+      "as_of": "2024-02-01T00:00:00Z",
+      "state": {
+        "name": "Acme Corp",
+        "status": "active",
+        "founded": "2024-01-01"
+      },
+      "last_event_id": "evt-001",
+      "deleted": false
+    },
+    {
+      "entity_id": "company-123",
+      "as_of": "2024-04-01T00:00:00Z",
+      "state": {
+        "name": "Acme Corp",
+        "status": "expanding",
+        "founded": "2024-01-01",
+        "employee_count": 10,
+        "relationships": [
+          {
+            "type": "employs",
+            "target": "person-456",
+            "role": "engineer",
+            "start_date": "2024-03-20"
+          }
+        ]
+      },
+      "last_event_id": "evt-003",
+      "deleted": false
+    },
+    {
+      "entity_id": "company-123",
+      "as_of": "2024-07-01T00:00:00Z",
+      "state": {
+        "name": "Acme Corp",
+        "status": "stable",
+        "founded": "2024-01-01",
+        "employee_count": 25,
+        "relationships": [
+          {
+            "type": "employs",
+            "target": "person-456",
+            "role": "engineer",
+            "start_date": "2024-03-20"
+          }
+        ]
+      },
+      "last_event_id": "evt-004",
+      "deleted": false
+    },
+    {
+      "entity_id": "company-123",
+      "as_of": "2025-01-01T00:00:00Z",
+      "state": {
+        "_deleted_state": {
+          "name": "Acme Corp",
+          "status": "stable",
+          "founded": "2024-01-01",
+          "employee_count": 25,
+          "relationships": [
+            {
+              "type": "employs",
+              "target": "person-456",
+              "role": "engineer",
+              "start_date": "2024-03-20"
+            }
+          ]
+        }
+      },
+      "last_event_id": "evt-005",
+      "deleted": true
+    }
+  ]
+}
+
