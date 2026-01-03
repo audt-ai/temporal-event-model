@@ -22,17 +22,7 @@ An event is a record that something changed at a specific point in time.
 - `source` — Where this event came from (pipeline name, system identifier)
 - `correlation_id` — For grouping related events that should be considered together
 - `metadata` — Catch-all for anything else
-
-### What an event doesn't contain
-
-Events don't express:
-- Whether the change is good or bad
-- How important the change is
-- What should be done about it
-- Why the change happened
-- Who is responsible
-
-These are interpretations. The model doesn't do interpretations.
+ The model doesn't do interpretations.
 
 ### Event types
 
@@ -51,8 +41,7 @@ That's the complete list. If you think you need another type, consider whether i
 ### Immutability
 
 Events are immutable. Once recorded, they don't change. If you got something wrong, you record a new event that corrects it—you don't edit the old one.
-
-This isn't a technical limitation, it's a design choice. Immutable events make the model trustworthy and reproducible.
+ Immutable events make the model trustworthy and reproducible.
 
 ---
 
@@ -191,6 +180,5 @@ Timeline + timestamp → (derive) → Snapshot
 Events are the source of truth. Everything else is derived.
 
 If you have the events, you can reconstruct any snapshot. If you have two snapshots, you can compute the diff. The timeline is just events with ordering guarantees.
-
-This is intentional. Events are immutable and append-only, which makes them easy to store, replicate, and reason about. Snapshots and diffs are derived views that can be recomputed whenever needed.
+ Events are immutable and append-only, which makes them easy to store, replicate, and reason about. Snapshots and diffs are derived views that can be recomputed whenever needed.
 
