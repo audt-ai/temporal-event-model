@@ -1,6 +1,6 @@
 # Temporal Event Model
 
-A primitive for tracking how things change over time.
+a primitive for tracking how things change over time.
 
 ---
 This repository defines a temporal modeling primitive. It provides structured ways to represent:
