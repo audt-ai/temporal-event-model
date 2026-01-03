@@ -1,14 +1,14 @@
+
+
 # Temporal Event Model v0.1 — Architecture
 
 This document describes the design and architecture of the temporal event model. It's meant to be read by engineers who want to understand what we're building and why.
 
 ---
+# 1. Problem Statement
+You update a record, and the old value is gone. Maybe there's an audit log somewhere, maybe a trigger writes to a history table, maybe someone remembers to call a logging function. Usually it's inconsistent, implicit, and spread across multiple places.
 
-## 1. Problem Statement
-
-Most systems treat time as an afterthought. You update a record, and the old value is gone. Maybe there's an audit log somewhere, maybe a trigger writes to a history table, maybe someone remembers to call a logging function. Usually it's inconsistent, implicit, and spread across multiple places.
-
-This causes real problems:
+This can cause some problems.
 
 **You lose state.** When a record gets updated, the previous value vanishes unless you explicitly preserved it. And if you did preserve it, it's probably in some audit table that requires specialized queries to make sense of.
 
@@ -593,4 +593,3 @@ Calm. Direct. No hype. Written by someone who expects the reader to be skeptical
 ---
 
 *This document is v0.1. It will evolve, but the core commitments—simplicity, neutrality, incompleteness—are permanent.*
-
