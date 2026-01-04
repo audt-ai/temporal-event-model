@@ -2,7 +2,7 @@
 Temporal Event Model - Reference Implementation
 
 This is a minimal implementation to clarify semantics. It's not production code.
-No dependencies beyond the standard library. not optimized for performance.
+No dependencies beyond the standard library. not optimized for performance at all.
 """
 
 from datetime import datetime
