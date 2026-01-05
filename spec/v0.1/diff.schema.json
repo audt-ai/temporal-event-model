@@ -40,7 +40,7 @@
     },
     "changes": {
       "type": "array",
-      "description": "List of field-level changes",
+      "description": "List of field changes",
       "items": {
         "type": "object",
         "required": ["field"],
